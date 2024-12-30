@@ -1,0 +1,19 @@
+{
+  "name": "csv-email-sender",
+  "version": "1.0.0",
+  "description": "An application to send emails based on CSV data",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev" : "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "ejs": "^3.1.6",
+    "multer": "^1.4.3",
+    "cors": "^2.8.5",
+    "nodemailer": "^6.7.0",
+    "csv-parser": "^3.0.0"
+  }
+}
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sending Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .success {
+            color: green;
+        }
+        .failure {
+            color: red;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email Sending Results</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% results.forEach(function(result) { %>
+                <tr>
+                    <td><%= result.email %></td>
+                    <td class="<%= result.sent ? 'success' : 'failure' %>">
+                        <%= result.sent ? 'Sent' : 'Failed' %>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <a href="/" class="back-link">Back to Upload</a>
+</body>
+</html>
+
